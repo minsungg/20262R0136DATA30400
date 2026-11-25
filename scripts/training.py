@@ -1,8 +1,8 @@
 from pathlib import Path
 from torch.utils.data import DataLoader
 from sentence_transformers import InputExample,SentenceTransformer,losses
-from config import DEVICE,BASE_MODEL_NAME,FT_MAX_SEQ_LENGTH,BATCH_SIZE,EPOCHS,MODEL_DIR
-from text_utils import get_item_text,get_query_text
+from .config import DEVICE,BASE_MODEL_NAME,FT_MAX_SEQ_LENGTH,BATCH_SIZE,EPOCHS,MODEL_DIR
+from .text_utils import get_item_text,get_query_text
 def build_training_examples(train_split,bm25_preds,catalog):
  lookup={x["item_id"]:get_item_text(x) for x in catalog}; ex=[]
  for q in train_split:
