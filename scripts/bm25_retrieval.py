@@ -1,5 +1,5 @@
 import bm25s
-from text_utils import get_item_text,get_query_text
+from .text_utils import get_item_text,get_query_text
 class BM25Retriever:
  def __init__(self,catalog,catalog_ids,k1=1.5,b=0.75):
   self.ids=list(catalog_ids); toks=bm25s.tokenize([get_item_text(x) for x in catalog],stopwords="en"); self.index=bm25s.BM25(k1=k1,b=b); self.index.index(toks)
