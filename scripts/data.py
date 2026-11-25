@@ -1,6 +1,6 @@
 import json, random
 from pathlib import Path
-from config import DATA_DIR, SEED, VAL_SIZE
+from .config import DATA_DIR, SEED, VAL_SIZE
 def load_json(path):
  with Path(path).open(encoding="utf-8") as f: return json.load(f)
 def load_data(data_dir=DATA_DIR):
