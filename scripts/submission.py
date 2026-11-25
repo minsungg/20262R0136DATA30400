@@ -1,6 +1,6 @@
 import csv
 from pathlib import Path
-from config import TOP_K,SUBMISSION_PATH
+from .config import TOP_K,SUBMISSION_PATH
 def write_submission(test_queries,predictions,catalog_id_set,path=SUBMISSION_PATH,top_k=TOP_K):
  path=Path(path); path.parent.mkdir(parents=True,exist_ok=True); cols=["query_id"]+[f"item_id_{i}" for i in range(1,top_k+1)]
  with path.open("w",newline="",encoding="utf-8") as f:
