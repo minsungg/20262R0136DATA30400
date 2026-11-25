@@ -1,7 +1,7 @@
 import torch
 from sentence_transformers import SentenceTransformer
-from config import DEVICE,BASE_MODEL_NAME,EMBEDDING_BATCH_SIZE,RETRIEVAL_CHUNK_SIZE
-from text_utils import get_item_text,get_query_text
+from .config import DEVICE,BASE_MODEL_NAME,EMBEDDING_BATCH_SIZE,RETRIEVAL_CHUNK_SIZE
+from .text_utils import get_item_text,get_query_text
 class DenseRetriever:
  def __init__(self,model,catalog,catalog_ids,batch_size=EMBEDDING_BATCH_SIZE,chunk_size=RETRIEVAL_CHUNK_SIZE):
   self.model=model; self.ids=list(catalog_ids); self.batch_size=batch_size; self.chunk_size=chunk_size
